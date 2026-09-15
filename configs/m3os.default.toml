@@ -1,0 +1,76 @@
+# Non-sensitive M3OS defaults.
+# Secrets, API credentials, and deployment-specific service URLs belong in .env.
+
+[llm]
+# provider = "claude"
+# provider = "gemini"
+provider = "kimi"
+request_timeout_seconds = 1200
+claude_model = "mcs-5"
+gemini_model = "gemini-3.1-pro-preview"
+kimi_model = "kimi-k3"
+kimi_reasoning_effort = "low"
+kimi_max_retries = 8
+kimi_request_timeout_seconds = 1200
+openai_model = "gpt-4"
+embedding_model = "text-embedding-3-large"
+
+[expert]
+model = "mcs-5"
+timeout_seconds = 1200
+
+[mcp]
+main_server_path = "mcp_server_improved.py"
+main_server_url = "http://127.0.0.1:8010/mcp"
+main_server_transport = "streamable_http"
+server_init_timeout_seconds = 120
+tool_timeout_seconds = 1200
+auto_restart_enabled = true
+restart_timeout_seconds = 300
+restart_poll_interval_seconds = 2
+restart_cooldown_seconds = 30
+restart_lock_dir = "tmp/mcp_restart_locks"
+main_server_restart_command = ["./open_mcp_server.sh", "--replace"]
+admet_ai_restart_command = ["../M3OS_MCP/M3OS_ADMET_AI/open_mcp_server.sh"]
+nesso_restart_command = ["../M3OS_MCP/M3OS_Nesso_Cofolding_local/open_mcp_server.sh"]
+boltz_restart_command = ["../M3OS_MCP/M3OS_Boltz_PLIP/open_mcp_server.sh"]
+iupac_gen_restart_command = ["../M3OS_MCP/M3OS_IUPAC/open_mcp_server.sh"]
+reinvent_restart_command = ["../M3OS_MCP/M3OS_REINVENT/open_mcp_server.sh"]
+
+[paths]
+property_meta_info_path = "m3os/agents_v5/tools/property_meta_info_preference.json"
+tmp_dir = "tmp"
+rag_data_dir = "tmp/rag"
+deepagents_backend_root_dir = "."
+deepagents_skills_root = "m3os/agents_v5/skills"
+
+[runtime]
+recursion_limit = 400
+session_idle_seconds = 14400
+generator_mode = "both"
+max_auto_expansion_rounds = 25
+max_no_progress_rounds = 2
+stale_seconds = 14400
+enable_shared_analysis = true
+
+[retrieval]
+uniprot_num_ids = 1
+max_papers = 10
+paper_dir = "tmp/papers"
+
+[retrieval.urls]
+uniprot_base_url = "https://rest.uniprot.org/uniprotkb"
+chembl_base_url = "https://www.ebi.ac.uk/chembl/api/data"
+semantic_scholar_search_url = "https://api.semanticscholar.org/graph/v1/paper/search"
+pubmed_search_url = "https://pubmed.ncbi.nlm.nih.gov/"
+
+[rag]
+chunk_size = 1024
+chunk_overlap = 200
+top_k = 8
+full_text_max_chars = 700000
+vector_db_path = "m3os/medchem_knowledge/drug_like_properties_db"
+
+[mcgs]
+csv_save_path_prefix = "tmp"
+csv_save_path_suffix = "110"

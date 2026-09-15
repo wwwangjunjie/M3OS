@@ -1,0 +1,40 @@
+# Python build and cache files
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+build/
+dist/
+
+# Local environments and credentials
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+configs/m3os.local.toml
+
+# Runtime state and generated results
+tmp/
+logs/
+pool/
+reports/
+*.log
+*.pid
+*.sqlite
+*.sqlite3
+*.faiss
+*.pkl
+
+# Experiment outputs; keep scripts and explicit public fixtures tracked.
+benchmark/results/
+conversation_history/
+large_tool_results/
+
+# Editor and operating-system files
+.DS_Store
+.idea/
+.vscode/
+*~
