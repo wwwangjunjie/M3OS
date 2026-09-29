@@ -179,6 +179,14 @@ independent of private data and machine-specific paths.
 
 ## Citation
 
-
+@misc{wang2026m3osmontecarlograph,
+      title={M3OS: A Monte Carlo Graph Search-Orchestrated Multi-Agent LLM System for Evidence-Traced Molecular Optimization}, 
+      author={Junjie Wang and Yaowei Jin and Ruohui Tang and Guonan Cui and Haojie Wang and Penglei Wang and Dingyan Wang and Duo An and Shuangjia Zheng and Qian Shi},
+      year={2026},
+      eprint={2609.34491},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2609.34491}, 
+}
 
 
